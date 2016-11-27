@@ -1,0 +1,52 @@
+Meeting Notes 27/11/2016
+
+- we introduce our selfs and discuss the project
+- available data
+	- overseas travel
+	- index of service (service sector performance)
+	- balance of Payments (transactions between UK and rest of the world)
+	- consumer trends (household expenditure and consumption)
+	- economic well-being
+	- business investment
+	- productivity
+	- UK Trade with EU and non-eu countries
+	- Index of Production
+	- retail sales
+	- output of construction industry
+	- consumer price inflation
+	- producer prices
+	- house price index
+	- labor market statistics
+	- public sector finances
+	- GDP
+	- migration statistics
+	- investment in insurance, pension
+		- not recent enough
+	- population
+- ideas
+	- look at news articles?
+
+important aspects:
+	story
+	audience
+	questions
+
+looking for general story
+	migration / population
+	migration and migration of money
+
+	migration and labor market
+
+	productivity over time
+	productivity over labor market
+
+	banking / finances
+	labor market
+
+	time series
+
+
+todo until next time
+	look and visualize provided data
+	everybody will come up with about three different areas/topics we should look at
+		we will then settle on one of the ideas

@@ -1,0 +1,57 @@
+Meeting Notes 2016-11-24
+
+everybody was looking at data provided link
+possible topics to look into:
+	compare to different countries
+	export vs import prices switch after Brexit
+
+	trade deficit compared with different countries
+		do a map around that
+
+	travel -> more people leaving than coming after brexit
+		also spending has flipped
+
+	british people keep spending
+		consumer price
+		Missing: volume of data?
+			we have data by spending british vs overseas
+
+we settle around trade data because the visualizations look interesting and there is sufficiently recent data about it available
+
+Q:
+	how does GBP effect trading prices?
+	how does Trade effect import exports prices?
+	how does it effect investment
+	how does it effect foreign investment
+
+		relation to age group
+
+	how does brexit effect job data
+
+	show examples of what is effected and whats
+		e.g. housing prices
+
+	central picture is weak GBP
+
+	what are the effects of high prices
+		does it affect consuming
+		which areas are not effected
+
+
+we will do an interactive infographic instead of slide show
+	
+
+Tasks until next meeting (01/12/2016):
+	need to find data on spending per household or something
+	start putting together data, everything we have (month wise if possible)
+		INTO CSV
+		put it into SUPER SIMPLE d3 chart
+
+	Alok: import export prices & import/export deficits (trade volume by volume)
+	Wan: investment intentions
+	Lukas: overseas spending
+	Kan: CPI / Currency (USD:GBP and EUR:GBP)
+	Manar: consumption
+
+also available:
+	overseas travel
