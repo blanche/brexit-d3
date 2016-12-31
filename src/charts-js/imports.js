@@ -37,6 +37,7 @@ d3.csv('./data2.csv', function (error, data) {
         d3.select('#imports svg')
             .datum(imports_data)
             .transition().duration(500).call(chart);
+
         return chart;
     });
 });
