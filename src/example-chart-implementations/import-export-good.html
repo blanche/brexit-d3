@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="../static/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+    <script src="../static/nv.d3.js"></script>
+
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+
+        svg {
+            display: block;
+        }
+
+        html, body, svg {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+        }
+
+        #chart1 {
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chart1">
+    <svg></svg>
+</div>
+
+<script>
+    // from http://bl.ocks.org/phil-pedruco/7243857
+    d3.csv('../data3.csv', function (error, data) {
+        console.log(data);
+        if (error) {
+            console.error(error);
+        }
+        // create an empty object that nv is expecting
+        ledata = [
+            {
+                key: "import goods",
+                yAxis: 1,
+                values: []
+            },
+            {
+                key: "export goods",
+                yAxis: 1,
+                values: []
+            },
+            {
+                key: "import services",
+                yAxis: 1,
+                values: []
+            },
+            {
+                key: "export services",
+                yAxis: 1,
+                values: []
+            },
+            {
+                key: "import oil",
+                yAxis: 1,
+                values: []
+            },
+            {
+                key: "export oil",
+                yAxis: 1,
+                values: []
+            }
+        ];
+        data.forEach(function (d) {
+            ledata[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.import_goods)});
+            ledata[1].values.push({x: Date.parse(d.Date), y: parseFloat(d.export_goods)});
+            ledata[2].values.push({x: Date.parse(d.Date), y: parseFloat(d.import_services)});
+            ledata[3].values.push({x: Date.parse(d.Date), y: parseFloat(d.export_services)});
+            ledata[4].values.push({x: Date.parse(d.Date), y: parseFloat(d.import_oil)});
+            ledata[5].values.push({x: Date.parse(d.Date), y: parseFloat(d.export_oil)});
+        });
+
+        nv.addGraph(function () {
+            // var chart = nv.models.multiBarHorizontalChart()
+            var chart = nv.models.multiBarChart()
+                .margin({top: 50, right: 60, bottom: 50, left: 100})
+                .color(d3.scale.category20().range())
+                .showControls(false); 
+            // chart.multibar.stacked(true);
+
+            chart.xAxis.tickFormat(function (d) {
+                return d3.time.format('%b %d %Y')(new Date(d))
+            });
+            chart.yAxis.tickFormat(d3.format(',.2f'))
+                .axisLabel("Value of UK Trade (£ million seasonally adjusted)")
+                .axisLabelDistance(20);
+
+            d3.select('#chart1 svg')
+                .datum(ledata)
+                .transition().duration(500).call(chart);
+                
+
+            // nv.utils.windowResize(chart.update);
+            return chart;
+        });
+    });
+</script>
+</body>
+</html>
