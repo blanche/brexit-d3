@@ -20,8 +20,8 @@ d3.csv('./data2.csv', function (error, data) {
         }
     ];
     data.forEach(function (d) {
-    	retailing_data[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.EUR)});
         retailing_data[1].values.push({x: Date.parse(d.Date), y: parseFloat(d.AllRetailingExcludingAutomotiveFuel)});
+        retailing_data[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.EUR)});
         
     });
 
@@ -34,8 +34,6 @@ d3.csv('./data2.csv', function (error, data) {
         });
         chart.yAxis1.tickFormat(d3.format(',.2f'));
         chart.yAxis2.tickFormat(d3.format(',.2f'));
-       
-        
 
         d3.select('#retailing svg')
             .datum(retailing_data)
