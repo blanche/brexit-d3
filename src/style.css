@@ -82,5 +82,9 @@ body {
     margin: auto;
     height: 60%;
     background-color: white;
-    width: 80%;
+    width: 82%;
+}
+
+svg.nvd3-svg {
+    overflow: visible;
 }
