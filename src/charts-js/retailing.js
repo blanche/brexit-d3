@@ -20,19 +20,23 @@ d3.csv('./data2.csv', function (error, data) {
         }
     ];
     data.forEach(function (d) {
-        retailing_data[1].values.push({x: Date.parse(d.Date), y: parseFloat(d.EUR)});
-        retailing_data[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.AllRetailingExcludingAutomotiveFuel)});
+        retailing_data[1].values.push({x: Date.parse(d.Date), y: parseFloat(d.retailing_window)});
+        retailing_data[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.EUR)});
+        
     });
 
     nv.addGraph(function () {
         var chart = nv.models.multiChart()
             .margin({top: 30, right: 60, bottom: 50, left: 70})
-            .color(d3.scale.category10().range());
+            .color(d3.scale.category10().range())
+            .yDomain2([27, 31]);
         chart.xAxis.tickFormat(function (d) {
             return d3.time.format('%b %d %Y')(new Date(d))
         });
-        chart.yAxis1.tickFormat(d3.format(',.1f'));
-        chart.yAxis2.tickFormat(d3.format(',.1f'));
+        chart.yAxis1.tickFormat(d3.format(',.2f'));
+        chart.yAxis1.axisLabel("EUR to GBP");
+        chart.yAxis2.tickFormat(d3.format(',.2f'));
+        chart.yAxis2.axisLabel("Retail Volume in Millions GBP");
 
         d3.select('#retailing svg')
             .datum(retailing_data)

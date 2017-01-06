@@ -31,8 +31,8 @@ d3.csv('./data2.csv', function (error, data) {
         chart.xAxis.tickFormat(function (d) {
             return d3.time.format('%b %d %Y')(new Date(d))
         });
-        chart.yAxis1.tickFormat(d3.format(',.1f'));
-        chart.yAxis2.tickFormat(d3.format(',.1f'));
+        chart.yAxis1.tickFormat(d3.format(',.2f'));
+        chart.yAxis2.tickFormat(d3.format(',.2f'));
 
         d3.select('#exports svg')
             .datum(exports_data)
