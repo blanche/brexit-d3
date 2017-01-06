@@ -1,5 +1,5 @@
 // from http://bl.ocks.org/phil-pedruco/7243857
-d3.csv('./data2.csv', function (error, data) {
+d3.csv('./data.csv', function (error, data) {
     console.log(data);
     if (error) {
         console.error(error);
