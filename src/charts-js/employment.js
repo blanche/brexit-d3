@@ -5,23 +5,24 @@ d3.csv('./data.csv', function (error, data) {
         console.error(error);
     }
     // create an empty object that nv is expecting
-    ftse_data = [
-        /*{
+    employment_data = [
+        {
             key: "EUR",
             type: "line",
             yAxis: 1,
             values: []
-        },*/
+        },
         {
-            key: "ftse100",
+            key: "Employment Intentions",
             type: "line",
             yAxis: 2,
             values: []
         }
     ];
     data.forEach(function (d) {
-        //ftse_data[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.EUR)});
-        ftse_data[1].values.push({x: Date.parse(d.Date), y: parseFloat(d.ftse100)});
+        employment_data[1].values.push({x: Date.parse(d.Date), y: parseFloat(d.employment_intentions)});
+        employment_data[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.EUR)});
+        
     });
 
     nv.addGraph(function () {
@@ -32,10 +33,10 @@ d3.csv('./data.csv', function (error, data) {
             return d3.time.format('%b %d %Y')(new Date(d))
         });
         chart.yAxis1.tickFormat(d3.format(',.2f'));
-        //chart.yAxis2.tickFormat(d3.format(',.2f'));
+        chart.yAxis2.tickFormat(d3.format(',.2f'));
 
-        d3.select('#ftse svg')
-            .datum(ftse_data)
+        d3.select('#employment svg')
+            .datum(employment_data)
             .transition().duration(500).call(chart);
 
         return chart;
