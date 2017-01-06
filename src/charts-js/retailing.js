@@ -13,7 +13,13 @@ d3.csv('./data.csv', function (error, data) {
             values: []
         },
         {
-            key: "Retailing",
+            key: "Retailing Volume (averaged)",
+            type: "line",
+            yAxis: 2,
+            values: []
+        },
+        {
+            key: "Retailing Volume",
             type: "line",
             yAxis: 2,
             values: []
@@ -21,6 +27,7 @@ d3.csv('./data.csv', function (error, data) {
     ];
     data.forEach(function (d) {
         retailing_data[1].values.push({x: Date.parse(d.Date), y: parseFloat(d.retailing_window)});
+        retailing_data[2].values.push({x: Date.parse(d.Date), y: parseFloat(d.retailing_in_m)});
         retailing_data[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.EUR)});
         
     });
@@ -29,7 +36,7 @@ d3.csv('./data.csv', function (error, data) {
         var chart = nv.models.multiChart()
             .margin({top: 30, right: 60, bottom: 50, left: 70})
             .color(d3.scale.category10().range())
-            .yDomain2([27, 31]);
+            .yDomain2([25, 34]);
         chart.xAxis.tickFormat(function (d) {
             return d3.time.format('%b %d %Y')(new Date(d))
         });
