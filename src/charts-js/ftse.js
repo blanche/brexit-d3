@@ -29,7 +29,7 @@ d3.csv('./data.csv', function (error, data) {
             .margin({top: 30, right: 60, bottom: 50, left: 70})
             .color(d3.scale.category10().range());
         chart.xAxis.tickFormat(function (d) {
-            return d3.time.format('%b %d %Y')(new Date(d))
+            return d3.time.format('%b %Y')(new Date(d))
         });
         chart.yAxis1.tickFormat(d3.format(',.2f'));
         //chart.yAxis2.tickFormat(d3.format(',.2f'));

@@ -20,8 +20,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#fullpage').fullpage({
-                anchors: ['Currency', 'Trade', 'Consumer', 'Housing', 'Employment'],
-                sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C', '#b3d9ff', ' #70db70'],
+                anchors: ['1', '2', '3'],
+                sectionsColor: ['#444444', '#444444', '#444444'],
                 menu: '#menu',
                 navigation: true,
                 navigationPosition: 'bottom'
@@ -32,11 +32,9 @@
 </head>
 <body>
 <ul id="menu">
-    <li data-menuanchor="Currency" class="active"><a href="#section0">Currency</a></li>
-    <li data-menuanchor="Trade"><a href="#section1">Import/Export</a></li>
-    <li data-menuanchor="Consumption"><a href="#section2">Consumer</a></li>
-    <li data-menuanchor="Housing"><a href="#section3">Housing</a></li>
-    <li data-menuanchor="Employment"><a href="#section4">Employment Intentions</a></li>
+    <li data-menuanchor="Currency" class="active"><a href="#section0">GBP Loss of Value</a></li>
+    <li data-menuanchor="Trade"><a href="#section1">Impact on Economic Areas</a></li>
+    <li data-menuanchor="Consumption"><a href="#section2">Not Affected Areas</a></li>
 
 </ul>
 
@@ -44,16 +42,13 @@
     <div class="section" id="section0">
         <div class="slide-wrapper">
             <h1>Currency</h1>
-            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem, iaculis id
-                nisi sed, iaculis iaculis urna. Proin tincidunt quis erat eu sagittis. Nam nec dolor odio. Nam id
-                commodo ex, mattis commodo lorem. Praesent eu metus nec dolor congue accumsan. Aenean ut justo sit amet
-                purus blandit rhoncus ac in risus. Integer bibendum ut libero venenatis blandit. Phasellus ut aliquet
-                ante, id viverra risus. Vivamus ac turpis neque. Aliquam ut placerat velit, quis tempus enim. Nunc magna
-                dui, mattis ut tincidunt a, varius nec tellus. Vestibulum ante ipsum primis in faucibus orci luctus et
-                ultrices posuere cubilia Curae
-            </div>
-            <div id="eur-usd-gbp" class="chart">
-                <svg></svg>
+            <div class="chart-wrapper">
+                <div class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem, iaculis
+                </div>
+                <div id="eur-usd-gbp" class="chart">
+                    <svg></svg>
+                </div>
             </div>
             <div class="source">
                 link to source
@@ -65,16 +60,13 @@
         <div class="slide" id="slide1">
             <div class="slide-wrapper">
                 <h1>Imports</h1>
-                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem, iaculis
-                    id nisi sed, iaculis iaculis urna. Proin tincidunt quis erat eu sagittis. Nam nec dolor odio. Nam id
-                    commodo ex, mattis commodo lorem. Praesent eu metus nec dolor congue accumsan. Aenean ut justo sit
-                    amet purus blandit rhoncus ac in risus. Integer bibendum ut libero venenatis blandit. Phasellus ut
-                    aliquet ante, id viverra risus. Vivamus ac turpis neque. Aliquam ut placerat velit, quis tempus
-                    enim. Nunc magna dui, mattis ut tincidunt a, varius nec tellus. Vestibulum ante ipsum primis in
-                    faucibus orci luctus et ultrices posuere cubilia Curae
-                </div>
-                <div id="imports" class="chart">
-                    <svg></svg>
+                <div class="chart-wrapper">
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem,
+                    </div>
+                    <div id="imports" class="chart">
+                        <svg></svg>
+                    </div>
                 </div>
                 <div class="source">
                     link to source
@@ -85,16 +77,13 @@
         <div class="slide" id="slide2">
             <div class="slide-wrapper">
                 <h1>Exports</h1>
-                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem, iaculis
-                    id nisi sed, iaculis iaculis urna. Proin tincidunt quis erat eu sagittis. Nam nec dolor odio. Nam id
-                    commodo ex, mattis commodo lorem. Praesent eu metus nec dolor congue accumsan. Aenean ut justo sit
-                    amet purus blandit rhoncus ac in risus. Integer bibendum ut libero venenatis blandit. Phasellus ut
-                    aliquet ante, id viverra risus. Vivamus ac turpis neque. Aliquam ut placerat velit, quis tempus
-                    enim. Nunc magna dui, mattis ut tincidunt a, varius nec tellus. Vestibulum ante ipsum primis in
-                    faucibus orci luctus et ultrices posuere cubilia Curae
-                </div>
-                <div id="exports" class="chart">
-                    <svg></svg>
+                <div class="chart-wrapper">
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem,
+                    </div>
+                    <div id="exports" class="chart">
+                        <svg></svg>
+                    </div>
                 </div>
                 <div class="source">
                     link to source
@@ -102,65 +91,59 @@
                 <script type="text/javascript" src="charts-js/exports.js"></script>
             </div>
         </div>
+        <div class="slide" id="slide3">
+            <div class="slide-wrapper">
+                <h1>Employment Intentions</h1>
+                <div class="chart-wrapper">
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem,
+                    </div>
+                    <div id="employment" class="chart">
+                        <svg></svg>
+                    </div>
+                </div>
+                <div class="source">
+                    link to source
+                </div>
+                <script type="text/javascript" src="charts-js/employment.js"></script>
+            </div>
+        </div>
     </div>
     <div class="section" id="section2">
-        <div class="slide-wrapper">
-            <h1>Consumption</h1>
-            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem, iaculis id
-                nisi sed, iaculis iaculis urna. Proin tincidunt quis erat eu sagittis. Nam nec dolor odio. Nam id
-                commodo ex, mattis commodo lorem. Praesent eu metus nec dolor congue accumsan. Aenean ut justo sit amet
-                purus blandit rhoncus ac in risus. Integer bibendum ut libero venenatis blandit. Phasellus ut aliquet
-                ante, id viverra risus. Vivamus ac turpis neque. Aliquam ut placerat velit, quis tempus enim. Nunc magna
-                dui, mattis ut tincidunt a, varius nec tellus. Vestibulum ante ipsum primis in faucibus orci luctus et
-                ultrices posuere cubilia Curae
+
+        <div class="slide">
+            <div class="slide-wrapper">
+                <h1>Consumption</h1>
+                <div class="chart-wrapper">
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem,
+                    </div>
+                    <div id="retailing" class="chart">
+                        <svg></svg>
+                    </div>
+                </div>
+                <div class="source">
+                    link to source
+                </div>
+                <script type="text/javascript" src="charts-js/retailing.js"></script>
             </div>
-            <div id="retailing" class="chart">
-                <svg></svg>
-            </div>
-            <div class="source">
-                link to source
-            </div>
-            <script type="text/javascript" src="charts-js/retailing.js"></script>
         </div>
-    </div>
-    <div class="section" id="section3">
-        <div class="slide-wrapper">
-            <h1>Housing</h1>
-            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem, iaculis id
-                nisi sed, iaculis iaculis urna. Proin tincidunt quis erat eu sagittis. Nam nec dolor odio. Nam id
-                commodo ex, mattis commodo lorem. Praesent eu metus nec dolor congue accumsan. Aenean ut justo sit amet
-                purus blandit rhoncus ac in risus. Integer bibendum ut libero venenatis blandit. Phasellus ut aliquet
-                ante, id viverra risus. Vivamus ac turpis neque. Aliquam ut placerat velit, quis tempus enim. Nunc magna
-                dui, mattis ut tincidunt a, varius nec tellus. Vestibulum ante ipsum primis in faucibus orci luctus et
-                ultrices posuere cubilia Curae
+        <div class="slide">
+            <div class="slide-wrapper">
+                <h1>Housing</h1>
+                <div class="chart-wrapper">
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem,
+                    </div>
+                    <div id="housing" class="chart">
+                        <svg></svg>
+                    </div>
+                </div>
+                <div class="source">
+                    link to source
+                </div>
+                <script type="text/javascript" src="charts-js/housing.js"></script>
             </div>
-            <div id="housing" class="chart">
-                <svg></svg>
-            </div>
-            <div class="source">
-                link to source
-            </div>
-            <script type="text/javascript" src="charts-js/housing.js"></script>
-        </div>
-    </div>
-    <div class="section" id="section4">
-        <div class="slide-wrapper">
-            <h1>Employment Intentions</h1>
-            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem, iaculis
-                id nisi sed, iaculis iaculis urna. Proin tincidunt quis erat eu sagittis. Nam nec dolor odio. Nam id
-                commodo ex, mattis commodo lorem. Praesent eu metus nec dolor congue accumsan. Aenean ut justo sit
-                amet purus blandit rhoncus ac in risus. Integer bibendum ut libero venenatis blandit. Phasellus ut
-                aliquet ante, id viverra risus. Vivamus ac turpis neque. Aliquam ut placerat velit, quis tempus enim.
-                Nunc magna dui, mattis ut tincidunt a, varius nec tellus. Vestibulum ante ipsum primis in faucibus orci
-                luctus et ultrices posuere cubilia Curae
-            </div>
-            <div id="employment" class="chart">
-                <svg></svg>
-            </div>
-            <div class="source">
-                link to source
-            </div>
-            <script type="text/javascript" src="charts-js/employment.js"></script>
         </div>
     </div>
 </div>

@@ -38,7 +38,7 @@ d3.csv('./data.csv', function (error, data) {
             .color(d3.scale.category10().range())
             .yDomain2([25, 34]);
         chart.xAxis.tickFormat(function (d) {
-            return d3.time.format('%b %d %Y')(new Date(d))
+            return d3.time.format('%b %Y')(new Date(d))
         });
         chart.yAxis1.tickFormat(d3.format(',.2f'));
         chart.yAxis1.axisLabel("EUR to GBP");
