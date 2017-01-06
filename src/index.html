@@ -20,8 +20,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#fullpage').fullpage({
-                anchors: ['Currency', 'Trade', 'Consumer '],
-                sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+                anchors: ['Currency', 'Trade', 'Consumer','Housing','Employment'],
+                sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C','#b3d9ff', ' #70db70'],
                 menu: '#menu',
                 navigation: true,
                 navigationPosition: 'bottom'
@@ -35,6 +35,9 @@
     <li data-menuanchor="Currency" class="active"><a href="#section0">Currency</a></li>
     <li data-menuanchor="Trade"><a href="#section1">Import/Export</a></li>
     <li data-menuanchor="Consumption"><a href="#section2">Consumer</a></li>
+    <li data-menuanchor="Housing"><a href="#section3">Housing</a></li>
+    <li data-menuanchor="Employment"><a href="#section4">Employment Intentions</a></li>
+
 </ul>
 
 <div id="fullpage">
@@ -69,6 +72,22 @@
         </div>
         <script type="text/javascript" src="charts-js/retailing.js"></script>
     </div>
+    <div class="section" id="section3">
+        <h1>Housing</h1>
+        <div id="housing" class="chart">
+            <svg></svg>
+        </div>
+        <script type="text/javascript" src="charts-js/housing.js"></script>
+    </div>
+    <div class="section" id="section4">
+        <h1>Employment Intentions</h1>
+        <div id="employment" class="chart">
+            <svg></svg>
+        </div>
+        <script type="text/javascript" src="charts-js/employment.js"></script>
+    </div>
+    
+    
 </div>
 
 <div id="watermark">
