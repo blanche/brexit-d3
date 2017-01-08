@@ -31,9 +31,14 @@ d3.csv('./data.csv', function (error, data) {
         chart.xAxis.tickFormat(function (d) {
             return d3.time.format('%b %Y')(new Date(d))
         });
+        //chart.yAxis1.tickValues(0)
         chart.yAxis1.tickFormat(d3.format(',.2f'));
         chart.yAxis2.tickFormat(d3.format(',.2f'));
-
+		
+		//chart.xAxis.axisLabel("x axis");
+		chart.yAxis1.axisLabel("EUR/USD");
+		chart.xAxis.axisLabel("Time");
+		
         d3.select('#eur-usd-gbp svg')
             .datum(eur_usd_gbp_data)
             .transition().duration(500).call(chart);

@@ -71,6 +71,7 @@ h1 {
     color: #f3f3f3;
 }
 
+
 /* Overwriting styles for control arrows for slides
 * --------------------------------------- */
 .controlArrow.prev {
@@ -117,4 +118,11 @@ svg.nvd3-svg {
     width: 100%;
     box-shadow: 0px 0px 6px rgba(0,0,0,.5);
     background-color: white;
+}
+.tick line {
+  display: none;
+}
+
+.source a{
+    color: white;
 }
