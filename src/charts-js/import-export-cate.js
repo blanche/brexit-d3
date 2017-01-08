@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <link href="../static/nv.d3.css" rel="stylesheet" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
-    <script src="../static/nv.d3.js"></script>
-
-    <style>
-        text {
-            font: 12px sans-serif;
-        }
-
-        svg {
-            display: block;
-        }
-
-        html, body, svg {
-            margin: 0px;
-            padding: 0px;
-            height: 100%;
-            width: 100%;
-        }
-
-        #chart1 {
-            height: 500px;
-        }
-    </style>
-</head>
-<body>
-
-<div id="chart1">
-    <svg></svg>
-</div>
-
-<script>
-    d3.csv('../data.csv', function (error, data) {
+d3.csv('../data.csv', function (error, data) {
         console.log(data);
         if (error) {
             console.error(error);
@@ -82,6 +46,3 @@
       });
 
     });
-</script>
-</body>
-</html>
