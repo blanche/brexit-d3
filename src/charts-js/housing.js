@@ -5,7 +5,7 @@ d3.csv('./data.csv', function (error, data) {
         console.error(error);
     }
     // create an empty object that nv is expecting
-    eur_usd_gbp_data = [
+    housing_data = [
         {
             key: "EUR",
             type: "line",
@@ -13,15 +13,16 @@ d3.csv('./data.csv', function (error, data) {
             values: []
         },
         {
-            key: "USD",
+            key: "Housing",
             type: "line",
-            yAxis: 1,
+            yAxis: 2,
             values: []
         }
     ];
     data.forEach(function (d) {
-        eur_usd_gbp_data[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.EUR)});
-        eur_usd_gbp_data[1].values.push({x: Date.parse(d.Date), y: parseFloat(d.USD)});
+        housing_data[1].values.push({x: Date.parse(d.Date), y: parseFloat(d.HPI)});
+        housing_data[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.EUR)});
+        
     });
 
     nv.addGraph(function () {
@@ -31,16 +32,11 @@ d3.csv('./data.csv', function (error, data) {
         chart.xAxis.tickFormat(function (d) {
             return d3.time.format('%b %Y')(new Date(d))
         });
-        //chart.yAxis1.tickValues(0)
         chart.yAxis1.tickFormat(d3.format(',.2f'));
         chart.yAxis2.tickFormat(d3.format(',.2f'));
-		
-		//chart.xAxis.axisLabel("x axis");
-		chart.yAxis1.axisLabel("EUR/USD");
-		chart.xAxis.axisLabel("Time");
-		
-        d3.select('#eur-usd-gbp svg')
-            .datum(eur_usd_gbp_data)
+
+        d3.select('#housing svg')
+            .datum(housing_data)
             .transition().duration(500).call(chart);
 
         return chart;
