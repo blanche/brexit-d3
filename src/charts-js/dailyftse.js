@@ -1,6 +1,5 @@
 		
 	d3.csv('./data-dailyftse.csv', function (error, data) {
-        console.log(data);
         if (error) {
             console.error(error);
         }
@@ -37,8 +36,7 @@
         }).showMaxMin(false);
 
         d3.select('#dailyftse svg')
-            .datum(dailyftsedata)
-            .transition().duration(500).call(chart);
+            .datum(dailyftsedata).call(chart);
 
         nv.utils.windowResize(chart.update);
 

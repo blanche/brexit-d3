@@ -1,5 +1,4 @@
-d3.csv('./data-dailyftse.csv', function (error, data) {    
-        console.log(data);
+d3.csv('./data-dailyftse.csv', function (error, data) {
         if (error) {
             console.error(error);
         }
@@ -43,8 +42,7 @@ d3.csv('./data-dailyftse.csv', function (error, data) {
 			chart.yAxis2.axisLabel('EUR to GBP');
 			
             d3.select('#dailyftse-eur svg')
-                .datum(dailyftse_eurdata)
-                .transition().duration(500).call(chart);
+                .datum(dailyftse_eurdata).call(chart);
 
             return chart;
         });
