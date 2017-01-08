@@ -68,6 +68,7 @@ body {
     color: #fff;
 }
 
+
 /* Overwriting styles for control arrows for slides
 * --------------------------------------- */
 .controlArrow.prev {
@@ -83,4 +84,7 @@ body {
     height: 60%;
     background-color: white;
     width: 80%;
+}
+.tick line {
+  display: none;
 }
