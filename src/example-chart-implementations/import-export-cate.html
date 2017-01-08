@@ -34,29 +34,26 @@
 </div>
 
 <script>
-    d3.csv('../data.csv', function (error, data) {
+    d3.csv('../data-cate.csv', function (error, data) {
         console.log(data);
         if (error) {
             console.error(error);
         }
         ledata = [
             {
-                key: "Trade",
+                key: "Export",
+                values: []
+            },{
+                key: "Import",
                 values: []
             }
             // 
         ];
         data.forEach(function (d) {
-            if (d.Date === "2016-07-01") {
-                ledata[0].values.push({label: "Import Goods", value: parseFloat(d.import_goods)});
-                ledata[0].values.push({label: "Export Goods", value: parseFloat(d.export_goods)});
-                ledata[0].values.push({label: "Import Services", value: parseFloat(d.import_services)});
-                ledata[0].values.push({label: "Export Services", value: parseFloat(d.export_services)});
-                ledata[0].values.push({label: "Import Oil", value: parseFloat(d.import_oil)});
-                ledata[0].values.push({label: "Export Oil", value: parseFloat(d.export_oil)});
-            };
+                ledata[0].values.push({label: d.Service, value: parseFloat(d.export)});
+                ledata[1].values.push({label: d.Service, value: parseFloat(d.import)});
         });
-        console.log(ledata)
+
       nv.addGraph(function() {
         var chart = nv.models.multiBarHorizontalChart()
             .x(function(d) { return d.label })
@@ -67,7 +64,7 @@
             .color(d3.scale.category20().range());       
 
         chart.yAxis.tickFormat(d3.format(',.2f'))
-                .axisLabel("Value of UK Trade (£ million seasonally adjusted)")
+                .axisLabel("Change in UK service product, quarter 3 (July to September) 2016 compared with quarter 2 (April to June) 2016(£ million)")
                 .axisLabelDistance(10);
 
          
