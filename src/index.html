@@ -19,8 +19,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#fullpage').fullpage({
-                anchors: ['1', '2', '3','4','5','6'],
-                sectionsColor: ['#444444', '#444444', '#444444','#444444','#444444','#444444'],
+                anchors: ['1', '2', '3', '4', '5', '6'],
+                sectionsColor: ['#444444', '#444444', '#444444', '#444444', '#444444', '#444444'],
                 menu: '#menu',
                 navigation: true,
                 navigationPosition: 'bottom'
@@ -34,15 +34,12 @@
     <li data-menuanchor="Currency" class="active"><a href="#section0">GBP Loss of Value</a></li>
     <li data-menuanchor="Trade"><a href="#section1">Impact on Economic Areas</a></li>
     <li data-menuanchor="Consumption"><a href="#section2">Not Affected Areas</a></li>
-	<li data-menuanchor="FTSE"><a href="#section3">Impact on Market</a></li>
-	<li data-menuanchor="Perception"><a href="#section4">Perception</a></li>
-	<!--<li data-menuanchor="WeeklyChange"><a href="#section5">WeeklyChange</a></li> -->
-
-
+    <li data-menuanchor="FTSE"><a href="#section3">Impact on Market</a></li>
+    <li data-menuanchor="Perception"><a href="#section4">Perception</a></li>
+    <!--<li data-menuanchor="WeeklyChange"><a href="#section5">WeeklyChange</a></li> -->
 </ul>
 
 <div id="fullpage">
-
     <div class="section" id="section0">
         <div class="slide-wrapper">
             <h1>Currency</h1>
@@ -55,9 +52,9 @@
                 </div>
             </div>
             <div class="source">
-            	Sources : <a href="https://uk.investing.com/currencies/eur-gbp-historical-data"><font color="FFFFFF">EUR vs Sterling Pound</font></a>,&nbsp
-            			  <a href="https://uk.investing.com/currencies/usd-gbp-historical-data"><font color="FFFFFF">USD vs Sterling Pound</font></a>
-
+                Sources: <a href="https://uk.investing.com/currencies/eur-gbp-historical-data">EUR vs Sterling
+                Pound</a>, <a href="https://uk.investing.com/currencies/usd-gbp-historical-data">USD vs Sterling
+                Pound</a>
             </div>
             <script type="text/javascript" src="charts-js/eur-usd-gbp.js"></script>
         </div>
@@ -76,9 +73,9 @@
                     </div>
                 </div>
                 <div class="source">
-            	Source : <a href="https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/oct2016"><font color="FFFFFF">UK Trade - Import </font></a>
-
-
+                    Source: <a
+                        href="https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/oct2016">UK
+                    Trade - Import</a>
                 </div>
                 <script type="text/javascript" src="charts-js/imports.js"></script>
             </div>
@@ -95,7 +92,9 @@
                     </div>
                 </div>
                 <div class="source">
-            	Source : <a href="https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/oct2016"><font color="FFFFFF">UK Trade - Export </font></a>
+                    Source: <a
+                        href="https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/oct2016">UK
+                    Trade - Export</a>
                 </div>
                 <script type="text/javascript" src="charts-js/exports.js"></script>
             </div>
@@ -121,7 +120,7 @@
 
 
     <div class="section" id="section2">
-        <div class="slide" >
+        <div class="slide">
             <div class="slide-wrapper">
                 <h1>Consumption</h1>
                 <div class="chart-wrapper">
@@ -138,7 +137,7 @@
                 <script type="text/javascript" src="charts-js/retailing.js"></script>
             </div>
         </div>
-        <div class="slide" >
+        <div class="slide">
             <div class="slide-wrapper">
                 <h1>Housing</h1>
                 <div class="chart-wrapper">
@@ -150,52 +149,57 @@
                     </div>
                 </div>
                 <div class="source">
-                 <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/housepriceindex/oct2016"><font color="FFFFFF">Housing Price Index</font></a>
-
+                    <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/housepriceindex/oct2016">
+                        Housing Price Index</a>
                 </div>
                 <script type="text/javascript" src="charts-js/housing.js"></script>
             </div>
         </div>
     </div>
 
-	<div class="section" id="section3">
-        <div class="slide" >
+    <div class="section" id="section3">
+        <div class="slide">
             <div class="slide-wrapper">
                 <h1>Daily FTSE 100</h1>
                 <div class="chart-wrapper">
                     <div class="text">
-                        The chart can be zoomed for a clear view of the sharp drop right after 23 June, and immediately after soars up to £7100
+                        The chart can be zoomed for a clear view of the sharp drop right after 23 June, and immediately
+                        after soars up to £7100
                     </div>
                     <div id="dailyftse" class="chart">
                         <svg></svg>
                     </div>
                 </div>
                 <div class="source">
-                    <a href="https://uk.investing.com/indices/uk-100-historical-data">FTSE 100 Historical Rates - Investing.com UK</a>
+                    <a href="https://uk.investing.com/indices/uk-100-historical-data">FTSE 100 Historical Rates -
+                        Investing.com UK</a>
                 </div>
                 <script type="text/javascript" src="charts-js/dailyftse.js"></script>
             </div>
         </div>
-        <div class="slide" >
+        <div class="slide">
             <div class="slide-wrapper">
                 <h1>Daily FTSE 100 vs EUR</h1>
                 <div class="chart-wrapper">
                     <div class="text">
-                        Despite the continuous declining of the currency, the FTSE remarkable rebound has been a surprised among speculators/analysts.
-						A sharp drop is also observed for GBP exactly right after Brexit, follows the same behaviour as with FTSE 100 before its further decline.
+                        Despite the continuous declining of the currency, the FTSE remarkable rebound has been a
+                        surprised among speculators/analysts.
+                        A sharp drop is also observed for GBP exactly right after Brexit, follows the same behaviour as
+                        with FTSE 100 before its further decline.
                     </div>
                     <div id="dailyftse-eur" class="chart">
                         <svg></svg>
                     </div>
                 </div>
                 <div class="source">
-                    <a href="https://uk.investing.com/indices/uk-100-historical-data">FTSE 100 Historical Rates - Investing.com UK</a>
+                    <a href="https://uk.investing.com/indices/uk-100-historical-data">FTSE 100 Historical Rates -
+                        Investing.com UK</a>
                 </div>
                 <script type="text/javascript" src="charts-js/dailyftse-eur.js"></script>
             </div>
         </div>
 
-		<div class="slide" >
+        <div class="slide">
             <div class="slide-wrapper">
                 <h1>FTSE 100 Weekly Percentage Change</h1>
                 <div class="chart-wrapper">
@@ -207,23 +211,26 @@
                     </div>
                 </div>
                 <div class="source">
-
-                <a href="https://uk.investing.com/indices/uk-100-historical-data"><font color="FFFFFF">FTSE 100 Historical Rates - Investing.com UK</font></a>
-                    <!--<a href="https://uk.investing.com/indices/uk-100-historical-data">-->
+                    <a href="https://uk.investing.com/indices/uk-100-historical-data">FTSE 100 Historical Rates -
+                        Investing.com UK</a>
                 </div>
                 <script type="text/javascript" src="charts-js/weeklychange.js"></script>
             </div>
-        </div>-->
+        </div>
+        -->
     </div>
 
-	<div class="section" id="section4">
+    <div class="section" id="section4">
         <div class="slide-wrapper">
             <h1>How do consumers perceive the financial and economic situation ?</h1>
             <div class="chart-wrapper">
                 <div class="text">
-                    People have been perceiving the general economic situation is getting worse, this is further enhanced with Brexit.
-					The GBP and economic perception follows a similar pattern, in a simple word it could be the currency is the main factor the general public considers how the economy is doing.
-					The perception on financial situation is generally well most of the time, but is substantially also effected by Brexit phenomena.
+                    People have been perceiving the general economic situation is getting worse, this is further
+                    enhanced with Brexit.
+                    The GBP and economic perception follows a similar pattern, in a simple word it could be the currency
+                    is the main factor the general public considers how the economy is doing.
+                    The perception on financial situation is generally well most of the time, but is substantially also
+                    effected by Brexit phenomena.
                 </div>
                 <div id="consumerperc" class="chart">
                     <svg></svg>
@@ -236,7 +243,7 @@
         </div>
     </div>
 
-	<!--<div class="section" id="section5">
+    <!--<div class="section" id="section5">
         <div class="slide-wrapper">
             <h1>FTSE 100 Weekly Percentage Change</h1>
             <div class="chart-wrapper">

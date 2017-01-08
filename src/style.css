@@ -122,3 +122,7 @@ svg.nvd3-svg {
 .tick line {
   display: none;
 }
+
+.source a{
+    color: white;
+}
