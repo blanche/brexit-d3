@@ -35,8 +35,27 @@ d3.csv('./data.csv', function (error, data) {
 		chart.yAxis1.axisLabel("GBP:EUR");
 		chart.yAxis2.axisLabel("Expense in £");
 		chart.xAxis.axisLabel("Time");
+        
         d3.select('#imports svg')
             .datum(imports_data).call(chart);
+
+        function drawBrexitLine(chartId, pos) {
+            var myline = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            var width = Math.ceil($(chartId + ' svg:first-child').width() * pos);
+            myline.setAttribute('class', 'brexit-line');
+            myline.setAttribute('x1', width);
+            myline.setAttribute('y1', '30');
+            myline.setAttribute('x2', width);
+            myline.setAttribute('y2', '440');
+            $('#imports svg:first-child .brexit-line').remove();
+            $('#imports svg:first-child').append(myline);
+        }
+
+        nv.utils.windowResize(function () {
+            chart.update();
+            drawBrexitLine('#imports', 0.8);
+        });
+        drawBrexitLine('#imports', 0.8);
 
         return chart;
     });
