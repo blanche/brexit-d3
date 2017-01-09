@@ -1,7 +1,5 @@
 // from http://bl.ocks.org/phil-pedruco/7243857
 d3.csv('./data-weeklychange.csv', function (error, data) {
-
-    console.log(data);
     if (error) {
         console.error(error);
     }
@@ -46,10 +44,7 @@ d3.csv('./data-weeklychange.csv', function (error, data) {
         chart.showXAxis(true);
 
         d3.select('#weeklychange svg')
-            .datum(weeklychange_data)
-            .transition()
-			.duration(500)
-            .call(chart);
+            .datum(weeklychange_data).call(chart);
 
         nv.utils.windowResize(chart.update);
         chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });

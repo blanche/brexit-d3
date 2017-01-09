@@ -1,5 +1,4 @@
-d3.csv('./data.csv', function (error, data) {    
-        console.log(data);
+d3.csv('./data.csv', function (error, data) {
         if (error) {
             console.error(error);
         }
@@ -47,8 +46,7 @@ d3.csv('./data.csv', function (error, data) {
 			chart.yAxis2.axisLabel('Consumer Perception');
 			
             d3.select('#consumerperc svg')
-                .datum(percdata)
-                .transition().duration(500).call(chart);
+                .datum(percdata).call(chart);
 
             return chart;
         });
