@@ -6,7 +6,7 @@ d3.csv('./data.csv', function (error, data) {
     // create an empty object that nv is expecting
     imports_data = [
         {
-            key: "EUR",
+            key: "GBP:EUR",
             type: "line",
             yAxis: 1,
             values: []
@@ -32,7 +32,7 @@ d3.csv('./data.csv', function (error, data) {
         });
         chart.yAxis1.tickFormat(d3.format(',.2f'));
         chart.yAxis2.tickFormat(d3.format(',.2f'));
-		chart.yAxis1.axisLabel("EUR");
+		chart.yAxis1.axisLabel("GBP:EUR");
 		chart.yAxis2.axisLabel("Expense in £");
 		chart.xAxis.axisLabel("Time");
         d3.select('#imports svg')

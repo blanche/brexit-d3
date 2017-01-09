@@ -11,7 +11,7 @@ d3.csv('./data-dailyftse.csv', function (error, data) {
                 values: []
             },
             {
-                key: "EUR",
+                key: "GBP:EUR",
                 type: "line",
                 yAxis: 2,
                 values: []
@@ -39,7 +39,7 @@ d3.csv('./data-dailyftse.csv', function (error, data) {
 			chart.yAxis2.tickFormat(d3.format(',.2f'));
 			
 			chart.yAxis1.axisLabel('FTSE 100');
-			chart.yAxis2.axisLabel('EUR to GBP');
+			chart.yAxis2.axisLabel('GBP:EUR');
 			
             d3.select('#dailyftse-eur svg')
                 .datum(dailyftse_eurdata).call(chart);

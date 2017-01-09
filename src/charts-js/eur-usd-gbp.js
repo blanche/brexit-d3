@@ -6,13 +6,13 @@ d3.csv('./data.csv', function (error, data) {
     // create an empty object that nv is expecting
     eur_usd_gbp_data = [
         {
-            key: "EUR",
+            key: "GBP:EUR",
             type: "line",
             yAxis: 1,
             values: []
         },
         {
-            key: "USD",
+            key: "GBP:USD",
             type: "line",
             yAxis: 1,
             values: []

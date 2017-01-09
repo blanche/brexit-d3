@@ -6,7 +6,7 @@ d3.csv('./data.csv', function (error, data) {
     // create an empty object that nv is expecting
     retailing_data = [
         {
-            key: "EUR",
+            key: "GBP:EUR",
             type: "line",
             yAxis: 1,
             values: []
@@ -40,7 +40,7 @@ d3.csv('./data.csv', function (error, data) {
             return d3.time.format('%b %Y')(new Date(d))
         });
         chart.yAxis1.tickFormat(d3.format(',.2f'));
-        chart.yAxis1.axisLabel("EUR to GBP");
+        chart.yAxis1.axisLabel("GBP:EUR");
         chart.yAxis2.tickFormat(d3.format(',.2f'));
         chart.yAxis2.axisLabel("Retail Volume in Millions GBP");
 
