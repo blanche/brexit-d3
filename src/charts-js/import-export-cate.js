@@ -15,8 +15,8 @@ d3.csv('data-cate.csv', function (error, data) {
         }
     ];
     data.forEach(function (d) {
-        import_export_categories_data[0].values.push({label: d.Service, value: parseFloat(d.export)});
-        import_export_categories_data[1].values.push({label: d.Service, value: parseFloat(d.import)});
+        import_export_categories_data[0].values.push({label: d.Goods, value: parseFloat(d.Export)});
+        import_export_categories_data[1].values.push({label: d.Goods, value: parseFloat(d.Import)});
     });
 
     nv.addGraph(function () {
@@ -33,10 +33,10 @@ d3.csv('data-cate.csv', function (error, data) {
             .color(d3.scale.category20().range());
 
         chart.yAxis.tickFormat(d3.format(',.2f'))
-            .axisLabel("Change in UK service product, quarter 3 (July to September) 2016 compared with quarter 2 (April to June) 2016 (£ million)")
+            .axisLabel("Change in UK trade value in goods, July 2016 compared with June 2016. (£ million)")
             .axisLabelDistance(5);
 
-        d3.select('#service-categories svg')
+        d3.select('#goods-categories svg')
             .datum(import_export_categories_data)
             .call(chart);
 
