@@ -1,7 +1,8 @@
-Service,export,import
-Travel,49,-1306
-Transport,-3,-92
-Telecommunications,-185,-26
-Financial,-38,-59
-Insurance and pension,-196,-18
-Government,-124,9
+Goods,Export,Import
+Oil,361,-104
+Cars,26,-251
+Consumer goods exclude cars,100,26
+Intermediate goods,51,125
+Capital goods,58,-103
+Chemicals,-130,49
+Semi-manufactured goods,75,-27

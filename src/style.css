@@ -40,7 +40,7 @@
 
 #menu li a,
 #menu li.active a {
-    padding: 9px 18px;
+    padding: 6px 15px;
     display: block;
 }
 
@@ -60,7 +60,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .section {
@@ -89,12 +89,21 @@ h1 {
 }
 
 .text {
-    text-align: left;
+    text-align: justify;
+    font-size: 11pt;
     color: #333;
-    width: 27%;
-    float: right;
+    width: 93%;
     margin-left: 3%;
-    margin-top: 10px;
+    margin-right: 3%;
+}
+
+.text-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+    height: 500px;
+    width: 27%;
 }
 
 svg.nvd3-svg {
@@ -131,4 +140,28 @@ svg.nvd3-svg {
 .brexit-line {
     stroke: rgb(255, 0, 0);
     stroke-width: 2;
+}
+
+#fp-nav > ul > li > a > span {
+    background-color: white;
+}
+
+svg > g > g > g > g > g > g.nv-groups > g {
+    stroke-width: 3px !important;
+}
+
+#retailing > svg > g > g > g.lines2Wrap.nvd3-svg > g > g > g.nv-groups > g.nv-group.nv-series-1 {
+    stroke-width: 1px !important;
+    stroke-dasharray: 5, 5;
+}
+
+.brexit-text {
+    fill: red;
+    transform: rotate(90deg);
+    font-size: 8pt;
+}
+
+#home{
+    color: white;
+    padding-top:40px;
 }

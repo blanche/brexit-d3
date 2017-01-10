@@ -6,7 +6,7 @@
         // create an empty object that nv is expecting
         var dailyftsedata = [
             {
-                key: "FTSE 100",
+                key: "FTSE 100 (£)",
                 type: "area",
                 yAxis: 1,
                 values: []
@@ -44,9 +44,7 @@
 
         nv.utils.windowResize(function () {
             chart.update();
-            //drawBrexitLine('#dailyftse', 0.73);
         });
-        //drawBrexitLine('#dailyftse', 0.73);
 
         return chart;
     });

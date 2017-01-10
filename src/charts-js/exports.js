@@ -12,7 +12,7 @@ d3.csv('./data.csv', function (error, data) {
             values: []
         },
         {
-            key: "Exports",
+            key: "Exports (£)",
             type: "line",
             yAxis: 2,
             values: []
@@ -35,7 +35,7 @@ d3.csv('./data.csv', function (error, data) {
 		
 		
 		chart.yAxis1.axisLabel("GBP:EUR");
-		chart.yAxis2.axisLabel("Expense in £");
+		chart.yAxis2.axisLabel("Expense (billion £)");
 		chart.xAxis.axisLabel("Time");
         
         
@@ -44,9 +44,9 @@ d3.csv('./data.csv', function (error, data) {
 
         nv.utils.windowResize(function () {
             chart.update();
-            drawBrexitLine('#exports', 0.8);
+            drawBrexitLine('#exports', 0.795);
         });
-        drawBrexitLine('#exports', 0.8);
+        drawBrexitLine('#exports', 0.795);
 
         return chart;
     });

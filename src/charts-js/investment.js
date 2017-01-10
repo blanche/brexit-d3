@@ -7,7 +7,7 @@ d3.csv('./data.csv', function (error, data) {
     // create an empty object that nv is expecting
     investment_data = [
         {
-            key: "EUR",
+            key: "GBP:EUR",
             type: "line",
             yAxis: 1,
             values: []
@@ -44,9 +44,9 @@ d3.csv('./data.csv', function (error, data) {
 
         nv.utils.windowResize(function () {
             chart.update();
-            drawBrexitLine('#investment', 0.8);
+            drawBrexitLine('#investment', 0.795);
         });
-        drawBrexitLine('#investment', 0.8);
+        drawBrexitLine('#investment', 0.795);
 
         return chart;
     });

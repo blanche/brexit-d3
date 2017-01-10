@@ -43,16 +43,16 @@ d3.csv('./data.csv', function (error, data) {
         chart.yAxis1.tickFormat(d3.format(',.2f'));
         chart.yAxis2.tickFormat(d3.format(',.2f'));
 		chart.yAxis1.axisLabel('GBP:EUR');
-		chart.yAxis2.axisLabel('Consumer Perception');
+		chart.yAxis2.axisLabel('Consumer Perception (aggregate balance)');
 		
         d3.select('#consumerperc svg')
             .datum(percdata).call(chart);
 
         nv.utils.windowResize(function () {
             chart.update();
-            drawBrexitLine('#consumerperc', 0.8);
+            drawBrexitLine('#consumerperc', 0.795, 220);
         });
-        drawBrexitLine('#consumerperc', 0.8);
+        drawBrexitLine('#consumerperc', 0.795, 220);
 
         return chart;
     });
