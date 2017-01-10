@@ -5,21 +5,21 @@ d3.csv('./data-dailyftse-gbp.csv', function (error, data) {
     // create an empty object that nv is expecting
     dailyftse_eurdata = [
         {
-            key: "Daily FTSE (£)",
-            type: "line",
-            yAxis: 2,
-            values: []
-        },
-        {
             key: "GBP:EUR",
             type: "line",
             yAxis: 1,
             values: []
+        },
+        {
+            key: "Daily FTSE (£)",
+            type: "line",
+            yAxis: 2,
+            values: []
         }
     ];
     data.forEach(function (d) {
-        dailyftse_eurdata[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.FTSEDaily)});
-        dailyftse_eurdata[1].values.push({x: Date.parse(d.Date), y: parseFloat(d.GBPtoEUR)});
+        dailyftse_eurdata[1].values.push({x: Date.parse(d.Date), y: parseFloat(d.FTSEDaily)});
+        dailyftse_eurdata[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.GBPtoEUR)});
 		
 	});
 
