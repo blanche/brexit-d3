@@ -49,18 +49,6 @@ d3.csv('./data.csv', function (error, data) {
         d3.select('#retailing svg')
             .datum(retailing_data).call(chart);
 
-
-        function drawBrexitLine(chartId, pos) {
-            var myline = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            var width = Math.ceil($(chartId + ' svg:first-child').width() * pos);
-            myline.setAttribute('class', 'brexit-line');
-            myline.setAttribute('x1', width);
-            myline.setAttribute('y1', '30');
-            myline.setAttribute('x2', width);
-            myline.setAttribute('y2', '440');
-            $('#retailing svg:first-child .brexit-line').remove();
-            $('#retailing svg:first-child').append(myline);
-        }
         nv.utils.windowResize(function () {
                 chart.update();
                 drawBrexitLine('#retailing', 0.8);
