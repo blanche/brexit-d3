@@ -38,7 +38,7 @@ d3.csv('./data-weeklychange.csv', function (error, data) {
 		
 		
         chart.yAxis
-            .axisLabel('Percentage (%)')
+            .axisLabel('Percentage change (%)')
             .tickFormat(d3.format(',.2f'));
 
         chart.showXAxis(true);
