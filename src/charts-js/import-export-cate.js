@@ -1,16 +1,17 @@
 d3.csv('data-cate.csv', function (error, data) {
     console.log(data);
+    var c10 = d3.scale.category10();
     if (error) {
         console.error(error);
     }
     import_export_categories_data = [
         {
             key: "Export",
-            color: "#3366cc",
+            color: c10(1),
             values: []
         }, {
             key: "Import",
-            color: "#dc3912",
+            color: c10(2),
             values: []
         }
     ];
