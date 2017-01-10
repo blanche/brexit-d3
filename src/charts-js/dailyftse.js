@@ -44,9 +44,9 @@
 
         nv.utils.windowResize(function () {
             chart.update();
-            drawBrexitLine('#dailyftse', 0.8);
+            //drawBrexitLine('#dailyftse', 0.73);
         });
-        drawBrexitLine('#dailyftse', 0.8);
+        //drawBrexitLine('#dailyftse', 0.73);
 
         return chart;
     });

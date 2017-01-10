@@ -1,4 +1,4 @@
-d3.csv('./data-dailyftse.csv', function (error, data) {
+d3.csv('./data-dailyftse-gbp.csv', function (error, data) {
     if (error) {
         console.error(error);
     }
@@ -31,7 +31,7 @@ d3.csv('./data-dailyftse.csv', function (error, data) {
             .color(d3.scale.category10().range());
         
 		chart.xAxis.tickFormat(function (d) {
-            return d3.time.format('%b %d %Y')(new Date(d))
+            return d3.time.format('%b %d %Y')(new Date(d ))
         });
 		
         //chart.yAxis1.tickFormat(d3.format(',.0f'));
@@ -46,9 +46,9 @@ d3.csv('./data-dailyftse.csv', function (error, data) {
 
         nv.utils.windowResize(function () {
             chart.update();
-            drawBrexitLine('#dailyftse-eur', 0.8);
+            drawBrexitLine('#dailyftse-eur', 0.2);
         });
-        drawBrexitLine('#dailyftse-eur', 0.8);
+        drawBrexitLine('#dailyftse-eur', 0.2);
 
         return chart;
     });

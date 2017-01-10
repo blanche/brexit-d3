@@ -17,7 +17,7 @@ d3.csv('./data.csv', function (error, data) {
             values: []
         },
 		{
-            key: "General",
+            key: "Economic",
             type: "line",
             yAxis: 2,
             values: []
