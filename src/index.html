@@ -15,7 +15,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
     <script src="static/nv.d3.js"></script>
     <script>
-        function drawBrexitLine(chartId, pos) {
+        function drawBrexitLine(chartId, pos, textpos) {
+            if (!textpos)
+                textpos = 70;
             var width = Math.ceil($(chartId + ' svg:first-child').width() * pos);
             var myline = document.createElementNS('http://www.w3.org/2000/svg', 'line');
             myline.setAttribute('class', 'brexit-line');
@@ -27,7 +29,7 @@
             var mytext = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             mytext.setAttribute('class', 'brexit-text');
             mytext.setAttribute('y', (width + 5)*-1);
-            mytext.setAttribute('x', '70');
+            mytext.setAttribute('x', textpos);
             mytext.innerHTML = "Brexit"
 
             $($(chartId + ' svg:first-child .brexit-line')).remove();
