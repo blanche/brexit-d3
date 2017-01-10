@@ -1,7 +1,5 @@
 // from http://bl.ocks.org/phil-pedruco/7243857
 d3.csv('./data-weeklychange.csv', function (error, data) {
-
-    console.log(data);
     if (error) {
         console.error(error);
     }
@@ -46,14 +44,29 @@ d3.csv('./data-weeklychange.csv', function (error, data) {
         chart.showXAxis(true);
 
         d3.select('#weeklychange svg')
-            .datum(weeklychange_data)
-            .transition()
-			.duration(500)
-            .call(chart);
+            .datum(weeklychange_data).call(chart);
 
         nv.utils.windowResize(chart.update);
         chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
         
+        function drawBrexitLine(chartId, pos) {
+            var myline = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            var width = Math.ceil($(chartId + ' svg:first-child').width() * pos);
+            myline.setAttribute('class', 'brexit-line');
+            myline.setAttribute('x1', width);
+            myline.setAttribute('y1', '30'); //30
+            myline.setAttribute('x2', width);
+            myline.setAttribute('y2', '440'); //440
+            $('#weeklychange svg:first-child .brexit-line').remove();
+            $('#weeklychange svg:first-child').append(myline);
+        }
+
+        nv.utils.windowResize(function () {
+            chart.update();
+            drawBrexitLine('#weeklychange', 0.72); //0.8
+        });
+        drawBrexitLine('#weeklychange', 0.72); //0.8
+
 		return chart;
     });
 

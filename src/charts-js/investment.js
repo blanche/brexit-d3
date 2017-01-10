@@ -22,7 +22,7 @@ d3.csv('./data.csv', function (error, data) {
     data.forEach(function (d) {
         investment_data[1].values.push({x: Date.parse(d.Date), y: parseFloat(d.investment_intentions)});
         investment_data[0].values.push({x: Date.parse(d.Date), y: parseFloat(d.EUR)});
-        
+
     });
 
     nv.addGraph(function () {

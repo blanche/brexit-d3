@@ -1,6 +1,5 @@
 		
 	d3.csv('./data-dailyftse.csv', function (error, data) {
-        console.log(data);
         if (error) {
             console.error(error);
         }
@@ -37,12 +36,29 @@
         }).showMaxMin(false);
 
         d3.select('#dailyftse svg')
-            .datum(dailyftsedata)
-            .transition().duration(500).call(chart);
+            .datum(dailyftsedata).call(chart);
 
         nv.utils.windowResize(chart.update);
 
         chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+        function drawBrexitLine(chartId, pos) {
+            var myline = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            var width = Math.ceil($(chartId + ' svg:first-child').width() * pos);
+            myline.setAttribute('class', 'brexit-line');
+            myline.setAttribute('x1', width);
+            myline.setAttribute('y1', '30');
+            myline.setAttribute('x2', width);
+            myline.setAttribute('y2', '440');
+            $('#dailyftse svg:first-child .brexit-line').remove();
+            $('#dailyftse svg:first-child').append(myline);
+        }
+
+        nv.utils.windowResize(function () {
+            chart.update();
+            drawBrexitLine('#dailyftse', 0.8);
+        });
+        drawBrexitLine('#dailyftse', 0.8);
 
         return chart;
     });
