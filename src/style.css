@@ -40,7 +40,7 @@
 
 #menu li a,
 #menu li.active a {
-    padding: 9px 18px;
+    padding: 6px 15px;
     display: block;
 }
 
@@ -144,4 +144,15 @@ svg > g > g > g > g > g > g.nv-groups > g {
 #retailing > svg > g > g > g.lines2Wrap.nvd3-svg > g > g > g.nv-groups > g.nv-group.nv-series-1 {
     stroke-width: 1px !important;
     stroke-dasharray: 5, 5;
+}
+
+.brexit-text {
+    fill: red;
+    transform: rotate(90deg);
+    font-size: 8pt;
+}
+
+#home{
+    color: white;
+    padding-top:40px;
 }

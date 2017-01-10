@@ -50,9 +50,9 @@ d3.csv('./data.csv', function (error, data) {
 
         nv.utils.windowResize(function () {
             chart.update();
-            drawBrexitLine('#consumerperc', 0.8);
+            drawBrexitLine('#consumerperc', 0.795);
         });
-        drawBrexitLine('#consumerperc', 0.8);
+        drawBrexitLine('#consumerperc', 0.795);
 
         return chart;
     });

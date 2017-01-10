@@ -15,15 +15,24 @@
     <script src="static/nv.d3.js"></script>
     <script>
         function drawBrexitLine(chartId, pos) {
-            var myline = document.createElementNS('http://www.w3.org/2000/svg', 'line');
             var width = Math.ceil($(chartId + ' svg:first-child').width() * pos);
+            var myline = document.createElementNS('http://www.w3.org/2000/svg', 'line');
             myline.setAttribute('class', 'brexit-line');
             myline.setAttribute('x1', width);
             myline.setAttribute('y1', '30');
             myline.setAttribute('x2', width);
-            myline.setAttribute('y2', '440');
+            myline.setAttribute('y2', '450');
+
+            var mytext = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            mytext.setAttribute('class', 'brexit-text');
+            mytext.setAttribute('y', (width + 5)*-1);
+            mytext.setAttribute('x', '70');
+            mytext.innerHTML = "Brexit"
+
             $($(chartId + ' svg:first-child .brexit-line')).remove();
             $($(chartId + ' svg:first-child')).append(myline);
+            $($(chartId + ' svg:first-child .brexit-text')).remove();
+            $($(chartId + ' svg:first-child')).append(mytext);
         }
 
     </script>
@@ -33,8 +42,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#fullpage').fullpage({
-                anchors: ['1', '2', '3', '4', '5', '6'],
-                sectionsColor: ['#444444', '#444444', '#444444', '#444444', '#444444', '#444444'],
+                anchors: ['0','1', '2', '3', '4', '5'],
+                sectionsColor: ['#444444','#444444', '#444444', '#444444', '#444444', '#444444'],
                 menu: '#menu',
                 navigation: true,
                 navigationPosition: 'bottom'
@@ -45,15 +54,22 @@
 </head>
 <body>
 <ul id="menu">
-    <li data-menuanchor="Currency" class="active"><a href="#section0">Weakening GBP</a></li>
-    <li data-menuanchor="Import/Export"><a href="#section1">Import/Export</a></li>
-    <li data-menuanchor="Market"><a href="#section2">Impact on Market</a></li>
-    <li data-menuanchor="Perception"><a href="#section3">Public Opinion &amp; Perception</a></li>
-    <li data-menuanchor="Consumption"><a href="#section4">Consumption not affected</a></li>
+    <li data-menuanchor="home" class="active"><a href="#0">Home</a></li>
+    <li data-menuanchor="section0" class="active"><a href="#1">Falling GBP</a></li>
+    <li data-menuanchor="section1"><a href="#2">Import/Export</a></li>
+    <li data-menuanchor="section2"><a href="#3">Impact on Market</a></li>
+    <li data-menuanchor="section3"><a href="#4">Public Opinion &amp; Perception</a></li>
+    <li data-menuanchor="section4"><a href="#5">Consumption not affected</a></li>
     <!--<li data-menuanchor="WeeklyChange"><a href="#section5">WeeklyChange</a></li> -->
 </ul>
 
 <div id="fullpage">
+    <div class="section" id="home">
+        <div class="slide-wrapper">
+            <h1>Title</h1>
+            some text for introduction (probably three points from presentation)
+        </div>
+    </div>
     <div class="section" id="section0">
         <div class="slide-wrapper">
             <h1>Currency</h1>

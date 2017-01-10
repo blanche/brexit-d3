@@ -41,29 +41,11 @@ d3.csv('./data.csv', function (error, data) {
         d3.select('#eur-usd-gbp svg')
             .datum(eur_usd_gbp_data).call(chart);
 
-        function drawBrexitLine(chartId, pos) {
-            var myline = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            var width = Math.ceil($(chartId + ' svg:first-child').width() * pos);
-            myline.setAttribute('class', 'brexit-line');
-            myline.setAttribute('x1', width);
-            myline.setAttribute('y1', '30');
-            myline.setAttribute('x2', width);
-            myline.setAttribute('y2', '440');
-            $('#eur-usd-gbp svg:first-child .brexit-line').remove();
-            $('#eur-usd-gbp svg:first-child').append(myline);
-        }
-
         nv.utils.windowResize(function () {
             chart.update();
-            drawBrexitLine('#eur-usd-gbp', 0.8);
+            drawBrexitLine('#eur-usd-gbp', 0.795);
         });
-        drawBrexitLine('#eur-usd-gbp', 0.8);
-
-        nv.utils.windowResize(function () {
-            chart.update();
-            drawBrexitLine('#eur-usd-gbp', 0.8);
-        });
-        drawBrexitLine('#eur-usd-gbp', 0.8);
+        drawBrexitLine('#eur-usd-gbp', 0.795);
 
         return chart;
     });
