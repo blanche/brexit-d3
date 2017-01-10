@@ -60,7 +60,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .section {
@@ -90,14 +90,20 @@ h1 {
 
 .text {
     text-align: justify;
+    font-size: 11pt;
     color: #333;
-    width: 27%;
-    font-weight: bold; 
-    font-style: italic;
-    float: right;
+    width: 93%;
     margin-left: 3%;
     margin-right: 3%;
-    margin-top: 10px;
+}
+
+.text-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+    height: 500px;
+    width: 27%;
 }
 
 svg.nvd3-svg {
