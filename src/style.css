@@ -89,11 +89,14 @@ h1 {
 }
 
 .text {
-    text-align: left;
+    text-align: justify;
     color: #333;
     width: 27%;
+    font-weight: bold; 
+    font-style: italic;
     float: right;
     margin-left: 3%;
+    margin-right: 3%;
     margin-top: 10px;
 }
 
