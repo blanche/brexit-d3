@@ -132,3 +132,16 @@ svg.nvd3-svg {
     stroke: rgb(255, 0, 0);
     stroke-width: 2;
 }
+
+#fp-nav > ul > li > a > span {
+    background-color: white;
+}
+
+svg > g > g > g > g > g > g.nv-groups > g {
+    stroke-width: 3px !important;
+}
+
+#retailing > svg > g > g > g.lines2Wrap.nvd3-svg > g > g > g.nv-groups > g.nv-group.nv-series-1 {
+    stroke-width: 1px !important;
+    stroke-dasharray: 5, 5;
+}
