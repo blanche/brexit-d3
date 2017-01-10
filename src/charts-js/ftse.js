@@ -36,18 +36,6 @@ d3.csv('./data.csv', function (error, data) {
         d3.select('#ftse svg')
             .datum(ftse_data).call(chart);
 
-        function drawBrexitLine(chartId, pos) {
-            var myline = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            var width = Math.ceil($(chartId + ' svg:first-child').width() * pos);
-            myline.setAttribute('class', 'brexit-line');
-            myline.setAttribute('x1', width);
-            myline.setAttribute('y1', '30');
-            myline.setAttribute('x2', width);
-            myline.setAttribute('y2', '440');
-            $('#ftse svg:first-child .brexit-line').remove();
-            $('#ftse svg:first-child').append(myline);
-        }
-
         nv.utils.windowResize(function () {
             chart.update();
             drawBrexitLine('#ftse', 0.8);

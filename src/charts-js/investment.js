@@ -40,8 +40,13 @@ d3.csv('./data.csv', function (error, data) {
 		chart.xAxis.axisLabel("Time");
 
         d3.select('#investment svg')
-            .datum(investment_data)
-            .transition().duration(500).call(chart);
+            .datum(investment_data).call(chart);
+
+        nv.utils.windowResize(function () {
+            chart.update();
+            drawBrexitLine('#investment', 0.8);
+        });
+        drawBrexitLine('#investment', 0.8);
 
         return chart;
     });
