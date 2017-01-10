@@ -36,7 +36,7 @@ d3.csv('./data.csv', function (error, data) {
         chart.yAxis1.tickFormat(d3.format(',.2f'));
         chart.yAxis2.tickFormat(d3.format(',.2f'));
         chart.yAxis1.axisLabel("EUR");
-		chart.yAxis2.axisLabel("Invesment Intention");
+		chart.yAxis2.axisLabel("Investment Intention");
 		chart.xAxis.axisLabel("Time");
 
         d3.select('#investment svg')
