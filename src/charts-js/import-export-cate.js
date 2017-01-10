@@ -6,11 +6,11 @@ d3.csv('data-cate.csv', function (error, data) {
     }
     import_export_categories_data = [
         {
-            key: "Export",
+            key: "Export (£)",
             color: c10(1),
             values: []
         }, {
-            key: "Import",
+            key: "Import (£)",
             color: c10(2),
             values: []
         }
