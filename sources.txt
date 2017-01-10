@@ -1,0 +1,5 @@
+style and html framework:
+http://alvarotrigo.com/fullPage/
+
+chart templates & style:
+http://nvd3.org/examples/index.html
