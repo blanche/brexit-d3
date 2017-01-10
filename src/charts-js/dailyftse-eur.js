@@ -5,7 +5,7 @@ d3.csv('./data-dailyftse.csv', function (error, data) {
     // create an empty object that nv is expecting
     dailyftse_eurdata = [
         {
-            key: "Daily FTSE",
+            key: "Daily FTSE (£)",
             type: "line",
             yAxis: 1,
             values: []
@@ -38,7 +38,7 @@ d3.csv('./data-dailyftse.csv', function (error, data) {
         chart.yAxis1.tickFormat(function(d) { return '£' + d3.format(',f')(d) });
 		chart.yAxis2.tickFormat(d3.format(',.2f'));
 		
-		chart.yAxis1.axisLabel('FTSE 100');
+		chart.yAxis1.axisLabel('FTSE 100 (£)');
 		chart.yAxis2.axisLabel('GBP:EUR');
 		
         d3.select('#dailyftse-eur svg')

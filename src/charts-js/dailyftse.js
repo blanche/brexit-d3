@@ -6,7 +6,7 @@
         // create an empty object that nv is expecting
         var dailyftsedata = [
             {
-                key: "FTSE 100",
+                key: "FTSE 100 (£)",
                 type: "area",
                 yAxis: 1,
                 values: []

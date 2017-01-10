@@ -12,7 +12,7 @@ d3.csv('./data.csv', function (error, data) {
             values: []
         },*/
         {
-            key: "ftse100",
+            key: "FTSE100 (£)",
             type: "line",
             yAxis: 2,
             values: []

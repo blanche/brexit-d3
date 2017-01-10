@@ -12,7 +12,7 @@ d3.csv('./data.csv', function (error, data) {
             values: []
         },
         {
-            key: "Imports",
+            key: "Imports (£)",
             type: "line",
             yAxis: 2,
             values: []
@@ -33,7 +33,7 @@ d3.csv('./data.csv', function (error, data) {
         chart.yAxis1.tickFormat(d3.format(',.2f'));
         chart.yAxis2.tickFormat(d3.format(',.2f'));
 		chart.yAxis1.axisLabel("GBP:EUR");
-		chart.yAxis2.axisLabel("Expense in £");
+		chart.yAxis2.axisLabel("Expense (£)");
 		chart.xAxis.axisLabel("Time");
         
         d3.select('#imports svg')
