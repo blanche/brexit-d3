@@ -5,15 +5,15 @@ d3.csv('./data-dailyftse.csv', function (error, data) {
     // create an empty object that nv is expecting
     dailyftse_eurdata = [
         {
-            key: "Daily FTSE",
+            key: "Daily FTSE (£)",
             type: "line",
-            yAxis: 1,
+            yAxis: 2,
             values: []
         },
         {
             key: "GBP:EUR",
             type: "line",
-            yAxis: 2,
+            yAxis: 1,
             values: []
         }
     ];
@@ -26,20 +26,17 @@ d3.csv('./data-dailyftse.csv', function (error, data) {
     nv.addGraph(function () {
 		var chart = nv.models.multiChart()
             .margin({top: 30, right: 60, bottom: 50, left: 70})
-			//.yDomain1([1.12, 1.42])
-			//.xDomain([2015-01-01, 2016-10-01])
             .color(d3.scale.category10().range());
         
 		chart.xAxis.tickFormat(function (d) {
             return d3.time.format('%b %d %Y')(new Date(d))
         });
+
+        chart.yAxis2.tickFormat(function(d) { return '£' + d3.format(',f')(d) });
+		chart.yAxis1.tickFormat(d3.format(',.2f'));
 		
-        //chart.yAxis1.tickFormat(d3.format(',.0f'));
-        chart.yAxis1.tickFormat(function(d) { return '£' + d3.format(',f')(d) });
-		chart.yAxis2.tickFormat(d3.format(',.2f'));
-		
-		chart.yAxis1.axisLabel('FTSE 100');
-		chart.yAxis2.axisLabel('GBP:EUR');
+		chart.yAxis2.axisLabel('FTSE 100 (£)');
+		chart.yAxis1.axisLabel('GBP:EUR');
 		
         d3.select('#dailyftse-eur svg')
             .datum(dailyftse_eurdata).call(chart);
