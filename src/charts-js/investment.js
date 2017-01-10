@@ -7,7 +7,7 @@ d3.csv('./data.csv', function (error, data) {
     // create an empty object that nv is expecting
     investment_data = [
         {
-            key: "EUR",
+            key: "GBP:EUR",
             type: "line",
             yAxis: 1,
             values: []
