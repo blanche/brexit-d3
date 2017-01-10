@@ -48,9 +48,9 @@ d3.csv('./data-weeklychange.csv', function (error, data) {
 
         nv.utils.windowResize(function () {
             chart.update();
-            drawBrexitLine('#weeklychange', 0.72); //0.8
+            drawBrexitLine('#weeklychange', 0.72, 350); //0.8
         });
-        drawBrexitLine('#weeklychange', 0.72); //0.8
+        drawBrexitLine('#weeklychange', 0.72, 350); //0.8
 
 		return chart;
     });
