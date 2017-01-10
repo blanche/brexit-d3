@@ -42,6 +42,7 @@ d3.csv('./data.csv', function (error, data) {
         });
         drawBrexitLine('#ftse', 0.8);
 
+        chart.update();
         return chart;
     });
 });

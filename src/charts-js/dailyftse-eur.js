@@ -46,9 +46,9 @@ d3.csv('./data-dailyftse.csv', function (error, data) {
 
         nv.utils.windowResize(function () {
             chart.update();
-            drawBrexitLine('#dailyftse-eur', 0.8);
+            drawBrexitLine('#dailyftse-eur', 0.795);
         });
-        drawBrexitLine('#dailyftse-eur', 0.8);
+        drawBrexitLine('#dailyftse-eur', 0.795);
 
         return chart;
     });

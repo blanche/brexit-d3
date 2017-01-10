@@ -15,15 +15,24 @@
     <script src="static/nv.d3.js"></script>
     <script>
         function drawBrexitLine(chartId, pos) {
-            var myline = document.createElementNS('http://www.w3.org/2000/svg', 'line');
             var width = Math.ceil($(chartId + ' svg:first-child').width() * pos);
+            var myline = document.createElementNS('http://www.w3.org/2000/svg', 'line');
             myline.setAttribute('class', 'brexit-line');
             myline.setAttribute('x1', width);
             myline.setAttribute('y1', '30');
             myline.setAttribute('x2', width);
-            myline.setAttribute('y2', '440');
+            myline.setAttribute('y2', '450');
+
+            var mytext = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            mytext.setAttribute('class', 'brexit-text');
+            mytext.setAttribute('y', (width + 5)*-1);
+            mytext.setAttribute('x', '70');
+            mytext.innerHTML = "Brexit"
+
             $($(chartId + ' svg:first-child .brexit-line')).remove();
             $($(chartId + ' svg:first-child')).append(myline);
+            $($(chartId + ' svg:first-child .brexit-text')).remove();
+            $($(chartId + ' svg:first-child')).append(mytext);
         }
 
     </script>
@@ -33,8 +42,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#fullpage').fullpage({
-                anchors: ['1', '2', '3', '4', '5', '6'],
-                sectionsColor: ['#444444', '#444444', '#444444', '#444444', '#444444', '#444444'],
+                anchors: ['0','1', '2', '3', '4', '5'],
+                sectionsColor: ['#444444','#444444', '#444444', '#444444', '#444444', '#444444'],
                 menu: '#menu',
                 navigation: true,
                 navigationPosition: 'bottom'
@@ -45,40 +54,50 @@
 </head>
 <body>
 <ul id="menu">
-    <li data-menuanchor="Currency" class="active"><a href="#section0">Weakening GBP</a></li>
-    <li data-menuanchor="Trade"><a href="#section1">Impact on Economy</a></li>
-    <li data-menuanchor="Consumption"><a href="#section2">Not Affected Areas</a></li>
-    <li data-menuanchor="FTSE"><a href="#section3">Impact on Market</a></li>
-    <li data-menuanchor="Perception"><a href="#section4">Perception</a></li>
+    <li data-menuanchor="home" class="active"><a href="#0">Home</a></li>
+    <li data-menuanchor="#1" class="active"><a href="#1">Falling GBP</a></li>
+    <li data-menuanchor="#2"><a href="#2">Import/Export</a></li>
+    <li data-menuanchor="#3"><a href="#3">Impact on Market</a></li>
+    <li data-menuanchor="#4"><a href="#4">Public Opinion &amp; Perception</a></li>
+    <li data-menuanchor="#5"><a href="#5">Consumption not affected</a></li>
     <!--<li data-menuanchor="WeeklyChange"><a href="#section5">WeeklyChange</a></li> -->
 </ul>
 
 <div id="fullpage">
+    <div class="section" id="home">
+        <div class="slide-wrapper">
+            <h1>Title</h1>
+            some text for introduction (probably three points from presentation)
+        </div>
+    </div>
     <div class="section" id="section0">
         <div class="slide-wrapper">
             <h1>Currency</h1>
             <div class="chart-wrapper">
                 <div class="text">
-                    The pound has fallen heavily against the EUR and USD after the Brexit vote. EUR has fallen to 3 year low post the results. Post Brexit the GBP to EUR has fallen in access of 7%.
+                    The pound has fallen heavily against the EUR and USD after the Brexit vote. EUR has fallen to 3 year
+                    low post the results. Post Brexit the GBP to EUR has fallen in access of 7%.
                 </div>
                 <div id="eur-usd-gbp" class="chart">
                     <svg></svg>
                 </div>
             </div>
             <div class="source">
-                Sources: <a href="https://uk.investing.com/currencies/gbp-eur-historical-data">Sterling Pound vs EUR</a>, <a href="https://uk.investing.com/currencies/gbp-usd-historical-data">Sterling Pound vs USD</a>
+                Sources: <a href="https://uk.investing.com/currencies/gbp-eur-historical-data">Sterling Pound vs EUR</a>,
+                <a href="https://uk.investing.com/currencies/gbp-usd-historical-data">Sterling Pound vs USD</a>
             </div>
             <script type="text/javascript" src="charts-js/eur-usd-gbp.js"></script>
         </div>
     </div>
 
     <div class="section" id="section1">
-        <div class="slide" id="slide1">
+        <div class="slide" id="1slide1">
             <div class="slide-wrapper">
                 <h1>Imports</h1>
                 <div class="chart-wrapper">
                     <div class="text">
-                        We can clearly see the sudden rise in the cost of Import after the Brexit Referendum results. This is mainly due to the fall of EUR against the Pound which leads to higer import costs. 
+                        We can clearly see the sudden rise in the cost of Import after the Brexit Referendum results.
+                        This is mainly due to the fall of EUR against the Pound which leads to higer import costs.
                     </div>
                     <div id="imports" class="chart">
                         <svg></svg>
@@ -92,12 +111,13 @@
                 <script type="text/javascript" src="charts-js/imports.js"></script>
             </div>
         </div>
-        <div class="slide" id="slide2">
+        <div class="slide" id="1slide2">
             <div class="slide-wrapper">
                 <h1>Exports</h1>
                 <div class="chart-wrapper">
                     <div class="text">
-                        Even with the fall of GBP vs EUR the Export trade has been on an upward trend and continues to maintain that trend even though after the Brexit referendum.  
+                        Even with the fall of GBP vs EUR the Export trade has been on an upward trend and continues to
+                        maintain that trend even though after the Brexit referendum.
                     </div>
                     <div id="exports" class="chart">
                         <svg></svg>
@@ -111,45 +131,7 @@
                 <script type="text/javascript" src="charts-js/exports.js"></script>
             </div>
         </div>
-        
-        
-        <div class="slide" id="slide3">
-            <div class="slide-wrapper">
-                <h1>Employment Intentions</h1>
-                <div class="chart-wrapper">
-                    <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem,
-                    </div>
-                    <div id="employment" class="chart">
-                        <svg></svg>
-                    </div>
-                </div>
-                <div class="source">
-                    link to source
-                </div>
-                <script type="text/javascript" src="charts-js/employment.js"></script>
-            </div>
-        </div>
-        
-        <div class="slide" id="slide4">
-            <div class="slide-wrapper">
-                <h1>Invesment Intentions</h1>
-                <div class="chart-wrapper">
-                    <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem,
-                    </div>
-                    <div id="investment" class="chart">
-                        <svg></svg>
-                    </div>
-                </div>
-                <div class="source">
-                    link to source
-                </div>
-                <script type="text/javascript" src="charts-js/investment.js"></script>
-            </div>
-        </div>
-        
-        <div class="slide" id="slide4">
+        <div class="slide" id="1slide3">
             <div class="slide-wrapper">
                 <h1>Change in UK service product</h1>
                 <div class="chart-wrapper">
@@ -171,49 +153,8 @@
         </div>
     </div>
 
-
     <div class="section" id="section2">
-        <div class="slide">
-            <div class="slide-wrapper">
-                <h1>Consumption</h1>
-                <div class="chart-wrapper">
-                    <div class="text">
-                        Even though the GBP to EUR is decreasing the overall consumption average does not drastically change or affected by the falling EUR value
-                                             
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem,
-                    </div>
-                    <div id="retailing" class="chart">
-                        <svg></svg>
-                    </div>
-                </div>
-                <div class="source">
-                    link to source
-                </div>
-                <script type="text/javascript" src="charts-js/retailing.js"></script>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="slide-wrapper">
-                <h1>Housing</h1>
-                <div class="chart-wrapper">
-                    <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem,
-                    </div>
-                    <div id="housing" class="chart">
-                        <svg></svg>
-                    </div>
-                </div>
-                <div class="source">
-                    <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/housepriceindex/oct2016">
-                        Housing Price Index</a>
-                </div>
-                <script type="text/javascript" src="charts-js/housing.js"></script>
-            </div>
-        </div>
-    </div>
-
-    <div class="section" id="section3">
-        <div class="slide">
+        <div class="slide" id="2slide1">
             <div class="slide-wrapper">
                 <h1>Daily FTSE 100</h1>
                 <div class="chart-wrapper">
@@ -232,7 +173,7 @@
                 <script type="text/javascript" src="charts-js/dailyftse.js"></script>
             </div>
         </div>
-        <div class="slide">
+        <div class="slide" id="2slide2">
             <div class="slide-wrapper">
                 <h1>Daily FTSE 100 vs EUR</h1>
                 <div class="chart-wrapper">
@@ -253,8 +194,7 @@
                 <script type="text/javascript" src="charts-js/dailyftse-eur.js"></script>
             </div>
         </div>
-
-        <div class="slide">
+        <div class="slide" id="2slide3">
             <div class="slide-wrapper">
                 <h1>FTSE 100 Weekly Percentage Change</h1>
                 <div class="chart-wrapper">
@@ -274,29 +214,86 @@
         </div>
     </div>
 
+    <div class="section" id="section3">
+        <div class="slide" id="3slide1">
+            <div class="slide-wrapper">
+                <h1>How do consumers perceive the financial and economic situation ?</h1>
+                <div class="chart-wrapper">
+                    <div class="text">
+                        People have been perceiving the general economic situation is getting worse, this is further
+                        enhanced with Brexit. The GBP and economic perception follows a similar pattern, in a simple
+                        word it could be the currency is the main factor the general public considers how the economy is
+                        doing. The perception on financial situation is generally well most of the time, but is
+                        substantially also effected by Brexit phenomena.
+                    </div>
+                    <div id="consumerperc" class="chart">
+                        <svg></svg>
+                    </div>
+                </div>
+                <div class="source">
+                    SOURCE
+                </div>
+                <script type="text/javascript" src="charts-js/consumerperc.js"></script>
+            </div>
+        </div>
+        <div class="slide" id="3slide2">
+            <div class="slide-wrapper">
+                <h1>Employment Intentions</h1>
+                <div class="chart-wrapper">
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem,
+                    </div>
+                    <div id="employment" class="chart">
+                        <svg></svg>
+                    </div>
+                </div>
+                <div class="source">
+                    Source: <a href="www.bankofengland.co.uk/publications/Pages/agentssummary/2016/sep.aspx">Bank of England</a>
+                </div>
+                <script type="text/javascript" src="charts-js/employment.js"></script>
+            </div>
+        </div>
+        <div class="slide" id="3slide3">
+            <div class="slide-wrapper">
+                <h1>Invesment Intentions</h1>
+                <div class="chart-wrapper">
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus lorem,
+                    </div>
+                    <div id="investment" class="chart">
+                        <svg></svg>
+                    </div>
+                </div>
+                <div class="source">
+                    Source: <a href="www.bankofengland.co.uk/publications/Pages/agentssummary/2016/sep.aspx">Bank of England</a>
+                </div>
+                <script type="text/javascript" src="charts-js/investment.js"></script>
+            </div>
+        </div>
+    </div>
+
     <div class="section" id="section4">
         <div class="slide-wrapper">
-            <h1>How do consumers perceive the financial and economic situation ?</h1>
+            <h1>Consumption</h1>
             <div class="chart-wrapper">
                 <div class="text">
-                    People have been perceiving the general economic situation is getting worse, this is further
-                    enhanced with Brexit.
-                    The GBP and economic perception follows a similar pattern, in a simple word it could be the currency
-                    is the main factor the general public considers how the economy is doing.
-                    The perception on financial situation is generally well most of the time, but is substantially also
-                    effected by Brexit phenomena.
+                    Even though the GBP to EUR is decreasing the overall consumption average was not affected by the
+                    falling EUR value. This can be made visible by
                 </div>
-                <div id="consumerperc" class="chart">
+                <div id="retailing" class="chart">
                     <svg></svg>
                 </div>
             </div>
             <div class="source">
-                link to source
+                Source:
+                <a href="https://www.ons.gov.uk/businessindustryandtrade/retailindustry/datasets/poundsdatatotalretailsales">
+                    Office for National Statistics - Business Industry and Trade
+                </a>
             </div>
-            <script type="text/javascript" src="charts-js/consumerperc.js"></script>
+            <script type="text/javascript" src="charts-js/retailing.js"></script>
         </div>
     </div>
-    
+
     <!--<div class="section" id="section5">
         <div class="slide-wrapper">
             <h1>FTSE 100 Weekly Percentage Change</h1>
